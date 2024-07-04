@@ -5,6 +5,10 @@ $code = isset($_GET['code']) ? $_GET['code'] : '';
 
 // If the code isn't in the correct format, CloudFlare will throw a 1020
 if (!preg_match("/^([a-f0-9]{8})-(([a-f0-9]{4})-){3}([a-f0-9]{12}) *$/i", $code)) {
+	http_response_code(403);
+	echo "Your personal token is incorrect or is missing the required permission.";
+	die;
+
     http_response_code(403);
     echo <<<EOD
 {
@@ -12,6 +16,7 @@ if (!preg_match("/^([a-f0-9]{8})-(([a-f0-9]{4})-){3}([a-f0-9]{12}) *$/i", $code)
 	"description": "Your personal token is incorrect or is missing the required permission."
 }
 EOD;
+die;
 }
 
 header('Content-Type: application/json; charset=utf-8');
