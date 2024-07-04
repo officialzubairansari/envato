@@ -6,7 +6,7 @@ $code = isset($_GET['code']) ? $_GET['code'] : '';
 // If the code isn't in the correct format, CloudFlare will throw a 1020
 if (!preg_match("/^([a-f0-9]{8})-(([a-f0-9]{4})-){3}([a-f0-9]{12}) *$/i", $code)) {
 	http_response_code(403);
-	echo "error code: 1020";
+	echo "Your personal token is incorrect or is missing the required permission.";
 	die;
 }
 
@@ -42,7 +42,7 @@ else {
 	echo <<<EOD
 {
 	"error": 404,
-	"description": "No sale belonging to the current user found with that code"
+	"description": "Purchase code was not found (or) did not belong to one of your items."
 }
 EOD;
 }
