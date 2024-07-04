@@ -33,7 +33,7 @@ if ($code == "829862b2-59ef-42c9-894c-665208ac2f41") {
             "price_cents" => 2000,
             "published_at" => "2024-07-13T19:07:03+10:00"
         ],
-        "buyer" => "David .J",
+        "buyer" => "Zubair Ansari",
         "purchase_count" => 1
     ]);
 } else {
