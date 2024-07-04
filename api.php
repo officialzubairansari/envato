@@ -12,8 +12,8 @@ if ( ! preg_match("/^([a-f0-9]{8})-(([a-f0-9]{4})-){3}([a-f0-9]{12}) *$/i", $cod
 	"description": "Your personal token is incorrect or is missing the required permission."
 }
 EOD;
-    die;
 }
+die;
 
 header('Content-Type: application/json; charset=utf-8');
 
